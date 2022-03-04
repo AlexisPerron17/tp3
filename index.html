@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="formulaire">
+    <meta name="author" content="Alexis Perron">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP3 - formulaire accessible</title>
+    <link rel="icon" href="favicon.ico">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/_normalize.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body>
+    <header class="header">
+        <picture>
+
+        </picture>
+    </header>
+
+    <main class="main">
+
+        <div class="text__intro">
+            <h1 class="titre__intro">Concour</h1>
+            <p>Complétez le coupon de participation et répondez à la question du jour ci- dessous.</p>
+            <p>30 finalistes accompagnés seront invités le jeudi 1er mars au restaurant Blumenthal pour un petit
+                déjeuner
+                préparé par le chef Rémi Brunelle. Parmi les finalistes présents, un grand gagnant s’envolera vers la
+                destination de son choix!</p>
+            <p>Vous avez jusqu'au vendredi 9 février à midi pour participer. Bonne chance à tous!</p>
+        </div>
+
+        <form action="traitement.php" method="post" name="comm" id="comm">
+            <fieldset>
+                <legend><h2 class="sous-titre__formulaire">Coupon de participation</h2></legend>
+                <fieldset>
+                    <Legend>Nom complet</Legend>
+                    <div>
+                        <label for="nom">Nom</label>
+                        <input required type="text" name="nom" id="nom">
+                    </div>
+                    <div>
+                        <label for="prenom">Prénom</label>
+                        <input required type="text" name=prenom id="prenom">
+                    </div>
+                    <p class="message__erreur">Avertissemnt Le prénom ou le nom comporte un ou plusieurs caractères interdits.</p>
+                </fieldset>
+                <br>
+                <div>
+                    <label for="rue">Adresse</label>
+                    <input type="text" name="adresse" id="adresse">
+                </div>
+                <p class="message__erreur">Avertissement Attention, le nom de la ville comporte un ou plusieurs caractères interdits.</p>
+                <div>
+                    <label for="ville">Ville</label>
+                    <input type="text" name="ville" id="ville">
+                </div>
+                <div>
+                    <label for="province">Pays</label>
+                    <select required name="listeprovince" id="province">
+                        <option value>province ou état</option>
+                            <optgroup label="Canada">
+                            <option value="AB">Alberta</option>
+                            <option value="BC">British Columbia</option>
+                            <option value="MB">Manitoba</option>
+                            <option value="NB">New Brunswick</option>
+                            <option value="NL">Newfoundland and Labrador</option>
+                            <option value="NS">Nova Scotia</option>
+                            <option value="ON">Ontario</option>
+                            <option value="PE">Prince Edward Island</option>
+                            <option value="QC">Quebec</option>
+                            <option value="SK">Saskatchewan</option>
+                            <option value="NT">Northwest Territories</option>
+                            <option value="NU">Nunavut</option>
+                            <option value="YT">Yukon</option>
+                            </optgroup>
+                            <optgroup label="États-Unis">
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                            </optgroup>
+                    </select>
+                    <p class="message__erreur">Avertissement La province ou l'état d'origine doit être précisé.</p>
+                </div>
+                <div>
+                    <label for="codepostal">Code postal</label>
+                    <input title="Le code postale doit respecter le format X1X 1X1." required pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" type="text" name="codepostal" id="codepostal">
+                    <p class="message__erreur">Avertissement Le code postal doit respecter le format X1X 1X1</p>
+                </div>
+                <div>
+                    <label for="courriel">Courriel</label>
+                    <input required type="text" name="courriel" id="courriel">
+                    <p class="message__erreur">Avertissement Attention, le courriel comporte un ou plusieurs caractères interdits.</p>
+                </div>
+                <br>
+                <fieldset>
+                    <legend>Téléphone (indicatif - numéro)</legend>
+                    <br>
+                    <div>
+                        <label for="indicatif">Indicatif</label>
+                        <input type="text" name="indicatif" id="indicatif">
+                    </div>
+                    <p>-</p>
+                    <div>
+                        <label for="numero">Numéro</label>
+                        <input type="text" name="numero" id="numero">
+                    </div>
+                    <p class="message__erreur">Avertissement Attention, le numéro de téléphone ne doit pas comporter d'espace ou de trait d'union.</p>
+                    <br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>J'aimerais collaborer dans la ou les rubriques suivantes</legend>
+                    <div>
+                        <input type="checkbox" name="actualite" value="actualite" id="actualite">
+                        <label for="actualite">Actualités</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="mecanique" value="mecanique" id="mecanique">
+                        <label for="mecanique">Mécanique</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="technique" value="technique" id="technique">
+                        <label for="technique">Technique</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="dossier" value="dossier" id="dossier">
+                        <label for="dossier">Dossier</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="destination" value="destination" id="destination">
+                        <label for="destination">Destination</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="nouveaute" value="nouveaute" id="nouveaute">
+                        <label for="nouveaute">Nouveautés</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="entrainement" value="entrainement" id="entrainement">
+                        <label for="entrainement">Entraînement</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Expliquez ce qui vous incite à joindre notre équipe</legend>
+                    <div>
+                        <textarea name="opinion">Expliquez votre opinion ici...</textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Faites parvenir votre cv au format pdf :</legend>
+                    <div>
+                        <input type="file" name="cv">
+                    </div>
+                </fieldset>
+
+                <input type="submit" value="Soumettre votre candidature">
+            </fieldset>
+        </form>
+    </main>
+</body>
