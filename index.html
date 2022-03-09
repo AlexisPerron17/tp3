@@ -15,7 +15,9 @@
 <body>
     <header class="header">
         <picture>
-
+            <source srcset="images/bandeau_600.jpg" media="(max-width:600px)">
+            <source srcset="images/bandeau_1200.jpg" media="(min-width:601px)">
+            <img src="images/bandeau_1200.jpg" alt="">
         </picture>
     </header>
 
@@ -33,7 +35,9 @@
 
         <form action="traitement.php" method="post" name="comm" id="comm">
             <fieldset>
-                <legend><h2 class="sous-titre__formulaire">Coupon de participation</h2></legend>
+                <legend>
+                    <h2 class="sous-titre__formulaire">Coupon de participation</h2>
+                </legend>
                 <fieldset>
                     <Legend>Nom complet</Legend>
                     <div>
@@ -44,14 +48,16 @@
                         <label for="prenom">Prénom</label>
                         <input required type="text" name=prenom id="prenom">
                     </div>
-                    <p class="message__erreur">Avertissemnt Le prénom ou le nom comporte un ou plusieurs caractères interdits.</p>
+                    <p class="message__erreur">Avertissemnt Le prénom ou le nom comporte un ou plusieurs caractères
+                        interdits.</p>
                 </fieldset>
                 <br>
                 <div>
                     <label for="rue">Adresse</label>
                     <input type="text" name="adresse" id="adresse">
                 </div>
-                <p class="message__erreur">Avertissement Attention, le nom de la ville comporte un ou plusieurs caractères interdits.</p>
+                <p class="message__erreur">Avertissement Attention, le nom de la ville comporte un ou plusieurs
+                    caractères interdits.</p>
                 <div>
                     <label for="ville">Ville</label>
                     <input type="text" name="ville" id="ville">
@@ -60,7 +66,7 @@
                     <label for="province">Pays</label>
                     <select required name="listeprovince" id="province">
                         <option value>province ou état</option>
-                            <optgroup label="Canada">
+                        <optgroup label="Canada">
                             <option value="AB">Alberta</option>
                             <option value="BC">British Columbia</option>
                             <option value="MB">Manitoba</option>
@@ -74,8 +80,8 @@
                             <option value="NT">Northwest Territories</option>
                             <option value="NU">Nunavut</option>
                             <option value="YT">Yukon</option>
-                            </optgroup>
-                            <optgroup label="États-Unis">
+                        </optgroup>
+                        <optgroup label="États-Unis">
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -127,19 +133,22 @@
                             <option value="WV">West Virginia</option>
                             <option value="WI">Wisconsin</option>
                             <option value="WY">Wyoming</option>
-                            </optgroup>
+                        </optgroup>
                     </select>
                     <p class="message__erreur">Avertissement La province ou l'état d'origine doit être précisé.</p>
                 </div>
                 <div>
                     <label for="codepostal">Code postal</label>
-                    <input title="Le code postale doit respecter le format X1X 1X1." required pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" type="text" name="codepostal" id="codepostal">
+                    <input title="Le code postale doit respecter le format X1X 1X1." required
+                        pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" type="text" name="codepostal"
+                        id="codepostal">
                     <p class="message__erreur">Avertissement Le code postal doit respecter le format X1X 1X1</p>
                 </div>
                 <div>
                     <label for="courriel">Courriel</label>
                     <input required type="text" name="courriel" id="courriel">
-                    <p class="message__erreur">Avertissement Attention, le courriel comporte un ou plusieurs caractères interdits.</p>
+                    <p class="message__erreur">Avertissement Attention, le courriel comporte un ou plusieurs caractères
+                        interdits.</p>
                 </div>
                 <br>
                 <fieldset>
@@ -147,65 +156,97 @@
                     <br>
                     <div>
                         <label for="indicatif">Indicatif</label>
-                        <input type="text" name="indicatif" id="indicatif">
+                        <input required type="text" name="indicatif" id="indicatif">
                     </div>
                     <p>-</p>
                     <div>
                         <label for="numero">Numéro</label>
-                        <input type="text" name="numero" id="numero">
+                        <input required type="text" name="numero" id="numero">
                     </div>
-                    <p class="message__erreur">Avertissement Attention, le numéro de téléphone ne doit pas comporter d'espace ou de trait d'union.</p>
+                    <p class="message__erreur">Avertissement Attention, le numéro de téléphone ne doit pas comporter
+                        d'espace ou de trait d'union.</p>
                     <br>
                 </fieldset>
 
                 <fieldset>
-                    <legend>J'aimerais collaborer dans la ou les rubriques suivantes</legend>
-                    <div>
-                        <input type="checkbox" name="actualite" value="actualite" id="actualite">
-                        <label for="actualite">Actualités</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="mecanique" value="mecanique" id="mecanique">
-                        <label for="mecanique">Mécanique</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="technique" value="technique" id="technique">
-                        <label for="technique">Technique</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="dossier" value="dossier" id="dossier">
-                        <label for="dossier">Dossier</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="destination" value="destination" id="destination">
-                        <label for="destination">Destination</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="nouveaute" value="nouveaute" id="nouveaute">
-                        <label for="nouveaute">Nouveautés</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="entrainement" value="entrainement" id="entrainement">
-                        <label for="entrainement">Entraînement</label>
-                    </div>
+                    <legend>Question du jour</legend>
+                    <fieldset>
+                        <legend>Date à laquelle la question à été posée?</legend>
+                        <div>
+                            <label for="jour">Jour</label>
+                            <input type="text" name="jour" id="jour">
+                        </div>
+                        <br>
+                        <div>
+                            <label for="mois">Mois</label>
+                            <select required name="listeMois" id="mois">
+                                <option value>Sélectionner</option>
+                                <option value="JAN">Janvier</option>
+                                <option value="FEV">Février</option>
+                                <option value="MARS">Mars</option>
+                                <option value="AL">Avril</option>
+                                <option value="MAI">Mai</option>
+                                <option value="JUN">Juin</option>
+                                <option value="JUIL">Juillet</option>
+                                <option value="AU">Août</option>
+                                <option value="SEP">Septempbre</option>
+                                <option value="OCT">Octobre</option>
+                                <option value="NOV">Novembre</option>
+                                <option value="DEC">Décembre</option>
+                            </select>
+                            <p class="message__erreur">Avertissement SVP, entrez la date complète.</p>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Lequelle de ses monuments est un mausolée</legend>
+                        <nav class="liste_question">
+                            <ul>
+                                <li>
+                                    <input required type="radio" name="chateauD'If" id="chateauD'If">
+                                    <picture>
+                                        <source srcset="images/chateaudIf-small.jpg" media="(max-width:600px)">
+                                        <source srcset="images/chateaudIf-small.jpg" media="(min-width:601px)">
+                                        <img src="images/chateaudIf.jpg" alt="Le château d'If">
+                                    </picture>
+                                    <label for="chateauD'If">Le château d'If</label>
+                                </li>
+                                <li>
+                                    <input required type="radio" name="palais" id="palais">
+                                    <img src="images/palaisluxembourg-small.jpg" alt="Le palais du Luxembourg">
+                                    <label for="palais">Le palais du Luxembourg</label>
+                                </li>
+                                <li>
+                                    <input required type="radio" name="tajMahal" id="tajMahal">
+                                    <img src="images/tajmahal-small.jpg" alt="Le Taj Mahal">
+                                    <label for="tajMahal">Le Taj Mahal</label>
+                                </li>
+                            </ul>
+                        </nav>
+                        <p class="message__erreur">Avertissement Veuillez répondre à la question du jour.</p>
+                    </fieldset>
                 </fieldset>
-
-                <fieldset>
-                    <legend>Expliquez ce qui vous incite à joindre notre équipe</legend>
-                    <div>
-                        <textarea name="opinion">Expliquez votre opinion ici...</textarea>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Faites parvenir votre cv au format pdf :</legend>
-                    <div>
-                        <input type="file" name="cv">
-                    </div>
-                </fieldset>
-
-                <input type="submit" value="Soumettre votre candidature">
+                <br>
+                <div>
+                    <input required type="checkbox" name="reglement" id="reglement">
+                    <label for="reglement">J'ai lu et j'accepte le <a href=#>règlement du concours</a> et je confirme
+                        avoir atteint l'âge de majorité dans ma province de résidence.</label>
+                    <p class="message__erreur">Avertissement SVP, acceptez le règlement du concours.</p>
+                </div>
+                <br>
+                <div>
+                    <input type="checkbox" name="documentation" id="documentation">
+                    <label for="documentation">Oui, j'accepte de recevoir de la documentation de Radio-Canada.</label>
+                </div>
+                <br>
+                <input type="submit" value="Enregistrer">
             </fieldset>
         </form>
     </main>
+    <footer class="footer">
+        <small class="copyright">
+            <bold>©2021, Alexis Perron</bold>
+        </small>
+        <br>
+        <small>Réalisé dans le cadre du cours Intégration II, Programme TIM, Cégep de Sainte-Foy.</small>
+    </footer>
 </body>
