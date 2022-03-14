@@ -23,16 +23,53 @@
 
 /* Utilitaires
    ========================================================================== */
- 
+@import url(_utilitaires.css);
 
 /* Charte typographique
    ========================================================================== */
- 
+@import url(tp3_typo.css);
 
 /* Grille
    ========================================================================== */
- 
+@import url(_grille.css);
 
 /* Mise en page
    ========================================================================== */
- 
+ .titre {
+    width: 100%;
+    padding: var(--padding-text);
+    margin-bottom: 0;
+ }
+
+ .boite {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: var(--padding-text);
+    border-radius: 1rem;
+ }
+
+ input[type=text],
+ input[type=email],
+ input[type=tel],
+ input[type=number],
+ select {
+    width:100%;
+    padding:0.5rem;
+    border-radius: 0.5rem;
+ }
+
+ ul {
+    list-style: none;
+ }
+
+ [type=radio]+label img {
+    filter:grayscale(1);
+ }
+
+ [type=radio]:hover+label img,
+ [type=radio]:focus+label img {
+    filter: grayscale(0);
+ }
+
+ .date input {
+    padding: 0.85rem;
+ }

@@ -9,7 +9,7 @@
     <title>TP3 - formulaire accessible</title>
     <link rel="icon" href="favicon.ico">
     <link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/_normalize.css" rel="stylesheet" type="text/css" media="all">
+
 </head>
 
 <body>
@@ -17,64 +17,70 @@
         <picture>
             <source srcset="images/bandeau_600.jpg" media="(max-width:600px)">
             <source srcset="images/bandeau_1200.jpg" media="(min-width:601px)">
-            <img src="images/bandeau_1200.jpg" alt="">
+            <img src="images/bandeau_1200.jpg"
+                alt="Concours ICI Première. Voyage de rêve. Au menu. Écoutez Gravel le matin en semaine 5h30. Courez la chance de gagner un crédit voyage de 20 000$!">
         </picture>
     </header>
 
     <main class="main">
-
-        <div class="intro">
-            <h1>Concours</h1>
+        <h1 class="titre">Concours</h1>
+        <aside class="cols_4_de_12 boite" role="complementary">
             <p>Complétez le coupon de participation et répondez à la question du jour ci- dessous.</p>
             <p>30 finalistes accompagnés seront invités le jeudi 1er mars au restaurant Blumenthal pour un petit
                 déjeuner
                 préparé par le chef Rémi Brunelle. Parmi les finalistes présents, un grand gagnant s’envolera vers la
                 destination de son choix!</p>
             <p>Vous avez jusqu'au vendredi 9 février à midi pour participer. Bonne chance à tous!</p>
-        </div>
+        </aside>
 
-        <form action="traitement.php" method="post" name="comm" id="comm">
+        <form action="index.html" class="cols_8_de_12" role="form">
             <fieldset>
                 <legend>
                     <h2 class="sous-titre__formulaire">Coupon de participation</h2>
                 </legend>
-                <fieldset class="ctnValidation nom-complet">
-                    <Legend>Nom complet</Legend>
+                <fieldset class="nomcomplet ctnValidation">
+                    <Legend class="h4">Nom complet</Legend>
                     <div class="rangee">
-                        <p>
+                        <p class="cols_6_de_12">
                             <label for="prenom">Prénom</label>
-                            <input required pattern="[a-zA-ZÀ-ÿ \-]+" type="text" name=prenom id="prenom">
+                            <input required pattern="[a-zA-ZÀ-ÿ \-]+" title="Caractères alphanumériques francais seulement" type="text" name=prenom id="prenom">
                         </p>
-                        <p>
+                        <p class="cols_6_de_12">
                             <label for="nom">Nom</label>
                             <input required type="text" name="nom" id="nom">
                         </p>
-
                     </div>
-                    <p class="erreur">Avertissemnt Le prénom ou le nom comporte un ou plusieurs caractères
-                        interdits.</p>
+                    <p class="erreur">
+                        <span class="screen-reader-only">Avertissement</span>
+                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        Avertissemnt Le prénom ou le nom comporte un ou plusieurs caractères interdits.</p>
                 </fieldset>
 
-                <div class="ctnValidation">
+                <div class="adresse ctnValidation">
                     <p class="adresse">
                         <label for="rue">Adresse</label>
                         <input type="text" name="adresse" id="adresse">
                     </p>
-                    <p class="erreur">Avertissement Attention, le nom de la ville comporte un ou plusieurs
-                        caractères interdits.</p>
+                    <p class="erreur">
+                        <span class="screen-reader-only">Avertissement</span>
+                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        L'adresse est requise</p>
                 </div>
-                <div class="ctnValidation">
-                    <p class="ville">
+                <div class="ville ctnValidation">
+                    <p>
                         <label for="ville">Ville</label>
-                        <input type="text" name="ville" id="ville">
+                        <input required type="text" name="ville" id="ville">
                     </p>
-                    <p class="erreur">Avertissement Attention, le nom de la ville comporte un ou plusieurs
+                    <p class="erreur">
+                        <span class="screen-reader-only">Avertissement</span>
+                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        Attention, le nom de la ville comporte un ou plusieurs
                         caractères interdits.</p>
                 </div>
                 <div class="region ctnValidation">
                     <p>
                         <label for="province">Pays</label>
-                        <select required name="listeprovince" id="province">
+                        <select required name="region" id="region">
                             <option value>province ou état</option>
                             <optgroup label="Canada">
                                 <option value="AB">Alberta</option>
@@ -146,42 +152,54 @@
                             </optgroup>
                         </select>
                     </p>
-                    <p class="erreur">Avertissement La province ou l'état d'origine doit être précisé.</p>
+                    <p class="erreur">
+                        <span class="screen-reader-only">Avertissement</span>
+                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        Avertissement La province ou l'état d'origine doit être précisé.</p>
                 </div>
-                <div class="ctnValidation codepostal">
+                <div class="codepostal ctnValidation">
                     <p>
                         <label for="codepostal">Code postal</label>
                         <input title="Le code postale doit respecter le format X1X 1X1." required
                             pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" type="text" name="codepostal"
                             id="codepostal">
                     </p>
-                    <p class="erreur">Avertissement Le code postal doit respecter le format X1X 1X1</p>
+                    <p class="erreur">
+                        <span class="screen-reader-only">Avertissement</span>
+                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        Avertissement Le code postal doit respecter le format X1X 1X1</p>
                 </div>
-                <div class="ctnValidation courriel">
+                <div class="courriel ctnValidation">
                     <p>
                         <label for="courriel">Courriel</label>
-                        <input required type="text" name="courriel" id="courriel">
+                        <input required type="email" name="courriel" id="courriel">
                     </p>
-                    <p class="erreur">Avertissement Attention, le courriel comporte un ou plusieurs caractères
+                    <p class="erreur">
+                        <span class="screen-reader-only">Avertissement</span>
+                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        Attention, le courriel comporte un ou plusieurs caractères
                         interdits.</p>
                 </div>
 
-                <fieldset class="ctnValidation telephone">
+                <fieldset class="telephone ctnValidation">
                     <legend>Téléphone (indicatif - numéro)</legend>
 
                     <div class="rangee">
-                        <p>
+                        <p class="cols_3_de_12">
                             <label for="indicatif">Indicatif</label>
-                            <input required type="text" name="indicatif" id="indicatif">
+                            <input required maxlength="3" type="tel" name="indicatif" id="indicatif">
                         </p>
 
-                        <p>-</p>
-                        <p>
+                        <p class="cols_1_de_12 tiret">-</p>
+                        <p class="cols_8_de_12">
                             <label for="numero">Numéro</label>
-                            <input required type="text" name="numero" id="numero">
+                            <input required maxlength="7" type="tel" name="numero" id="numero">
                         </p>
                     </div>
-                    <p class="erreur">Avertissement Attention, le numéro de téléphone ne doit pas comporter
+                    <p class="erreur">
+                        <span class="screen-reader-only">Avertissement</span>
+                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        Attention, le numéro de téléphone ne doit pas comporter
                         d'espace ou de trait d'union.</p>
 
                 </fieldset>
@@ -189,69 +207,97 @@
                 <fieldset>
                     <legend>Question du jour</legend>
                     <fieldset class="ctnValidation date">
-                        <legend>Date à laquelle la question à été posée?</legend>
-                        <div>
+                        <legend class="h4">Date à laquelle la question à été posée?</legend>
+                        <p class="cols_4_de_12">
                             <label for="jour">Jour</label>
-                            <input type="text" name="jour" id="jour">
-                        </div>
-
-                        <div>
+                            <input required min="1" max="31" type="number" name="jour" id="jour">
+                        </p>
+                        <p class="cols_4_de_12">
                             <label for="mois">Mois</label>
                             <select required name="listeMois" id="mois">
-                                <option value>Sélectionner</option>
-                                <option value="JAN">Janvier</option>
-                                <option value="FEV">Février</option>
-                                <option value="MARS">Mars</option>
-                                <option value="AL">Avril</option>
-                                <option value="MAI">Mai</option>
-                                <option value="JUN">Juin</option>
-                                <option value="JUIL">Juillet</option>
-                                <option value="AU">Août</option>
-                                <option value="SEP">Septempbre</option>
-                                <option value="OCT">Octobre</option>
-                                <option value="NOV">Novembre</option>
-                                <option value="DEC">Décembre</option>
+                                <option value="">Sélectionner</option>
+                                <option value="01">Janvier</option>
+                                <option value="02">Février</option>
+                                <option value="03">Mars</option>
+                                <option value="04">Avril</option>
+                                <option value="05">Mai</option>
+                                <option value="06">Juin</option>
+                                <option value="07">Juillet</option>
+                                <option value="08">Août</option>
+                                <option value="09">Septempbre</option>
+                                <option value="10">Octobre</option>
+                                <option value="11">Novembre</option>
+                                <option value="12">Décembre</option>
                             </select>
-                            <p class="erreur">Avertissement SVP, entrez la date complète.</p>
-                        </div>
+                        </p>
+                        <p class="cols_4_de_12">
+                            <label for="annee">Année</label>
+                            <input id="annee" name="annee" type="number"
+                                   required min="2020" max="2022">
+                        </p>
+                            <p class="erreur">
+                                <span class="screen-reader-only">Avertissement</span>
+                                <span class="icon icon--avertissement" aria-hidden="true"></span>
+                                Avertissement SVP, entrez la date complète.</p>
+                        
                     </fieldset>
                     <fieldset class="ctnValidation question">
-                        <legend>Lequelle de ses monuments est un mausolée</legend>
+                        <legend class="h4">Lequelle de ses monuments est un mausolée</legend>
                         <nav>
-                            <ul>
-                                <li>
-                                    <input required type="radio" name="chateauD'If" id="chateauD'If">
+                            <ul class="sanspuces rangee">
+                                <li class="cols_4_de_12">
+                                    <input class="screen-reader-only" required type="radio" name="if" id="if">
+                                    <label for="if">
                                     <picture>
                                         <source srcset="images/chateaudIf-small.jpg" media="(max-width:600px)">
-                                        <source srcset="images/chateaudIf-small.jpg" media="(min-width:601px)">
+                                        <source srcset="images/chateaudIf.jpg" media="(min-width:601px)">
                                         <img src="images/chateaudIf.jpg" alt="Le château d'If">
                                     </picture>
-                                    <label for="chateauD'If">Le château d'If</label>
+                                    <span>Le château d'If</span>
+                                    </label>
+                                    
                                 </li>
-                                <li>
-                                    <input required type="radio" name="palais" id="palais">
-                                    <img src="images/palaisluxembourg-small.jpg" alt="Le palais du Luxembourg">
-                                    <label for="palais">Le palais du Luxembourg</label>
+                                <li class="cols_4_de_12">
+                                    <input class="screen-reader-only" required type="radio" name="palais" id="palais">
+                                    <label for="palais">
+                                        <picture>
+                                            <source srcset="images/palaisluxembourg-small.jpg" media="(max-width:600px)">
+                                            <source srcset="images/palaisluxembourg.jpg" media="(min-width:601px)">
+                                            <img src="images/palaisluxembourg.jpg" alt="">
+                                        </picture>
+                                    <span>Le palais du Luxembourg</span>
+                                    </label>
                                 </li>
-                                <li>
-                                    <input required type="radio" name="tajMahal" id="tajMahal">
-                                    <img src="images/tajmahal-small.jpg" alt="Le Taj Mahal">
-                                    <label for="tajMahal">Le Taj Mahal</label>
+                                <li class="cols_4_de_12">
+                                    <input class="screen-reader-only" required type="radio" name="tajMahal" id="tajMahal">
+                                    <label for="tajMahal">
+                                        <picture>
+                                            <source srcset="images/tajmahal-small.jpg" media="(max-width:600px)">
+                                            <source srcset="images/tajmahal.jpg" media="(min-width:601px)">
+                                            <img src="images/tajmahal-small.jpg" alt="">
+                                        </picture>
+                                        <span>Le Taj Mahal</span>
+                                    </label>
                                 </li>
                             </ul>
                         </nav>
-                        <p class="erreur">Avertissement Veuillez répondre à la question du jour.</p>
+                        <p class="erreur">
+                            <span class="screen-reader-only">Avertissement</span>
+                            <span class="icon icon--avertissement" aria-hidden="true"></span>
+                            Avertissement Veuillez répondre à la question du jour.</p>
                     </fieldset>
-                </fieldset class="ctnValidation">
-                <br>
-                <div>
-                    <p class="reglement">
+                
+                <div class="reglement ctnValidation">
+                    <p>
                         <input required type="checkbox" name="reglement" id="reglement">
-                        <label for="reglement">J'ai lu et j'accepte le <a href=#>règlement du concours</a> et je
+                        <label for="reglement">J'ai lu et j'accepte le <a href="pdf/Reglements-Voyage-De-Reve-Au-Menu.pdf" target="blank">règlement du concours</a> et je
                             confirme
                             avoir atteint l'âge de majorité dans ma province de résidence.</label>
                     </p>
-                    <p class="erreur">Avertissement SVP, acceptez le règlement du concours.</p>
+                    <p class="erreur">
+                        <span class="screen-reader-only">Avertissement</span>
+                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        Avertissement SVP, acceptez le règlement du concours.</p>
 
                     <p class="documentation">
                         <input type="checkbox" name="documentation" id="documentation">
@@ -274,4 +320,8 @@
             <small>Réalisé dans le cadre du cours Intégration II, Programme TIM, Cégep de Sainte-Foy.</small>
         </div>
     </footer>
+    <!-- <script src="js/json.js"></script>
+    <script src="js/app.js"></script> -->
 </body>
+
+</html>
