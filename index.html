@@ -52,18 +52,19 @@
                     </div>
                     <p class="erreur">
                         <span class="screen-reader-only">Avertissement</span>
-                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        <span class="icone icone--avertissement" aria-hidden="true"></span>
                         Avertissemnt Le prénom ou le nom comporte un ou plusieurs caractères interdits.</p>
                 </fieldset>
 
                 <div class="adresse ctnValidation">
                     <p class="adresse">
-                        <label for="rue">Adresse</label>
-                        <input type="text" name="adresse" id="adresse">
+                        <label for="adresse">Adresse</label>
+                        <input type="text" name="adresse"
+                               id="adresse">
                     </p>
                     <p class="erreur">
                         <span class="screen-reader-only">Avertissement</span>
-                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        <span class="icone icone--avertissement" aria-hidden="true"></span>
                         L'adresse est requise</p>
                 </div>
                 <div class="ville ctnValidation">
@@ -73,14 +74,15 @@
                     </p>
                     <p class="erreur">
                         <span class="screen-reader-only">Avertissement</span>
-                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        <span class="icone icone--avertissement" aria-hidden="true"></span>
                         Attention, le nom de la ville comporte un ou plusieurs
                         caractères interdits.</p>
                 </div>
                 <div class="region ctnValidation">
                     <p>
                         <label for="province">Pays</label>
-                        <select required name="region" id="region">
+                        <select required name="region"
+                                id="province">
                             <option value>province ou état</option>
                             <optgroup label="Canada">
                                 <option value="AB">Alberta</option>
@@ -154,7 +156,7 @@
                     </p>
                     <p class="erreur">
                         <span class="screen-reader-only">Avertissement</span>
-                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        <span class="icone icone--avertissement" aria-hidden="true"></span>
                         Avertissement La province ou l'état d'origine doit être précisé.</p>
                 </div>
                 <div class="codepostal ctnValidation">
@@ -166,7 +168,7 @@
                     </p>
                     <p class="erreur">
                         <span class="screen-reader-only">Avertissement</span>
-                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        <span class="icone icone--avertissement" aria-hidden="true"></span>
                         Avertissement Le code postal doit respecter le format X1X 1X1</p>
                 </div>
                 <div class="courriel ctnValidation">
@@ -176,7 +178,7 @@
                     </p>
                     <p class="erreur">
                         <span class="screen-reader-only">Avertissement</span>
-                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        <span class="icone icone--avertissement" aria-hidden="true"></span>
                         Attention, le courriel comporte un ou plusieurs caractères
                         interdits.</p>
                 </div>
@@ -198,12 +200,12 @@
                     </div>
                     <p class="erreur">
                         <span class="screen-reader-only">Avertissement</span>
-                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        <span class="icone icone--avertissement" aria-hidden="true"></span>
                         Attention, le numéro de téléphone ne doit pas comporter
                         d'espace ou de trait d'union.</p>
 
                 </fieldset>
-
+            </fieldset> <!-- il manquait la fermeture du fieldset de coupon de participation -->
                 <fieldset>
                     <legend>Question du jour</legend>
                     <fieldset class="ctnValidation date">
@@ -237,7 +239,7 @@
                         </p>
                             <p class="erreur">
                                 <span class="screen-reader-only">Avertissement</span>
-                                <span class="icon icon--avertissement" aria-hidden="true"></span>
+                                <span class="icone icone--avertissement" aria-hidden="true"></span>
                                 Avertissement SVP, entrez la date complète.</p>
                         
                     </fieldset>
@@ -246,7 +248,8 @@
                         <nav>
                             <ul class="sanspuces rangee">
                                 <li class="cols_4_de_12">
-                                    <input class="screen-reader-only" required type="radio" name="if" id="if">
+                                    <input class="screen-reader-only" required type="radio"
+                                           name="monument" id="if">
                                     <label for="if">
                                     <picture>
                                         <source srcset="images/chateaudIf-small.jpg" media="(max-width:600px)">
@@ -258,7 +261,8 @@
                                     
                                 </li>
                                 <li class="cols_4_de_12">
-                                    <input class="screen-reader-only" required type="radio" name="palais" id="palais">
+                                    <input class="screen-reader-only" required type="radio"
+                                           name="monument" id="palais">
                                     <label for="palais">
                                         <picture>
                                             <source srcset="images/palaisluxembourg-small.jpg" media="(max-width:600px)">
@@ -269,7 +273,8 @@
                                     </label>
                                 </li>
                                 <li class="cols_4_de_12">
-                                    <input class="screen-reader-only" required type="radio" name="tajMahal" id="tajMahal">
+                                    <input class="screen-reader-only" required type="radio"
+                                           name="monument" id="tajMahal">
                                     <label for="tajMahal">
                                         <picture>
                                             <source srcset="images/tajmahal-small.jpg" media="(max-width:600px)">
@@ -283,7 +288,7 @@
                         </nav>
                         <p class="erreur">
                             <span class="screen-reader-only">Avertissement</span>
-                            <span class="icon icon--avertissement" aria-hidden="true"></span>
+                            <span class="icone icone--avertissement" aria-hidden="true"></span>
                             Avertissement Veuillez répondre à la question du jour.</p>
                     </fieldset>
                 
@@ -296,7 +301,7 @@
                     </p>
                     <p class="erreur">
                         <span class="screen-reader-only">Avertissement</span>
-                        <span class="icon icon--avertissement" aria-hidden="true"></span>
+                        <span class="icone icone--avertissement" aria-hidden="true"></span>
                         Avertissement SVP, acceptez le règlement du concours.</p>
 
                     <p class="documentation">
@@ -314,7 +319,8 @@
     <footer class="footer">
         <div class="credits">
             <small>
-                <bold>©2021, Alexis Perron</bold>
+<!--                <bold>©2021, Alexis Perron</bold>-->
+                <strong>©2022, Alexis Perron</strong>
             </small>
             <br>
             <small>Réalisé dans le cadre du cours Intégration II, Programme TIM, Cégep de Sainte-Foy.</small>
